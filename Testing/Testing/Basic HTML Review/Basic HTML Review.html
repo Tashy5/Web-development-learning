@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta 
+            charset="UTF-8"
+            name="description"
+            content="This is a practice website for myself to test what I've learnt in FCC HTML"
+        />
+        <title>Basic HTML Test Website</title>
+    </head>
+    
+<body>
+    <h1 id="title">Test Website</h1>
+    <p>This is a test website to implement all lessons taught in the HTML course from FCC</p>
+    <p>Here is a list of some of the topics covered</p>
+        <section>
+            <figure>
+                <ul>
+                    <li>
+                        <p>Google Image 1</p>
+                        <img src="Images/Image 1.png" alt="Google Image No.1">
+                    </li>
+                    <li>
+                        <p>Google Image 2</p>
+                        <img src="Images/Image 2.png" alt="Google Image No.2">
+                    </li>
+                    <li>
+                        <p>Google Image 3</p>
+                        <img src="Images/Image 3.jpg" alt="Google Image No.3">
+                    </li>
+                </ul>
+                <figcaption>A display of three different google logos</figcaption>
+            </figure>
+        </section>
+    <p>In the above section, there is an example of using unorganized lists to display text and images</p>
+    <p>The next section covers anchor elements for links</p>
+    <p>For this demonstration, I will be using the game Valorant as an example. Creating a tier list for controllers in game and using anchor elements to give links to their wikis</p>
+
+<!--In this section, I learnt a lot about seperation of anchor elements to iframe elements, making sure the a element only deals with the image, and the iframe is seperate is good practice
+Additionally, using the <br> element breaks the seperation between picture and video, allowing for the video to be displayed underneath the image.-->
+
+        <section>
+        <ol>
+            <li>
+                <p>Omen</p>
+                <a href="https://valorant.fandom.com/wiki/Omen" target="_blank">
+                    <img 
+                        src="Images/Omen.png" 
+                        alt="Rank No.1 Controller: Omen"
+                        width="400"
+                        height="500">
+                </a>
+                <br>
+                    <iframe 
+                        width="560" 
+                        height="315" 
+                        src="https://www.youtube.com/embed/Swqc8ed9p3Q?si=nk0HFKWP9Z5wpdOY" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+            </li>   
+            <li>
+                <p>Viper</p>
+                <a href="https://valorant.fandom.com/wiki/Viper" target="_blank">
+                    <img 
+                        src="Images/Viper.webp" 
+                        alt="Rank No.1 Controller: Viper"
+                        width="400"
+                        height="500">
+                </a>
+                <br>
+                    <iframe 
+                        width="560" 
+                        height="315" 
+                        src="https://www.youtube.com/embed/Mue4NBw6eis?si=PUT1S3uBMbSIj9uz" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+            </li>
+            <li>
+                <p>Astra</p>
+                <a href="https://valorant.fandom.com/wiki/Astra" target="_blank">
+                    <img 
+                        src="Images/Astra.webp" 
+                        alt="Rank No.1 Controller: Astra"
+                        width="400"
+                        height="500">
+                </a>
+                <br>
+                    <iframe 
+                        width="560" 
+                        height="315" 
+                        src="https://www.youtube.com/embed/wVuKmIK1oSc?si=qEdHGVU-ikssBqNU" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+            </li>
+        </ol>
+        </section>
+<!--One issue with the code above is that the images are all different pixel ratios, meaning some of the images are being squashed height ways and others length ways, distoring the look-->
+<p>As we can see, I <em>LOVE</em> Omen</p>
+<p>Moving on, here is an example of audio files on a website</p>
+<audio src="Audio/Assassin's creed track.wav" controls></audio>
+
+ </body>
+<footer>
+<p>No <strong>Copyright</strong> material used</p>
+</footer>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mr Whiskers Blog</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Mr. Whiskers' Blog Page!</h1>
+        <figure>
+            <img 
+                src="Photos/Mr.Whiskers.jpg" 
+                alt="Mr Whiskers"
+                height="450"
+                width="300"
+            />
+        <figcaption>Mr Whiskers</figcaption>
+        </figure>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#posts">Posts</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="about">
+            <h2>About</h2>
+            <p>
+                Hi there! I'm Thomas Ashton, a training programmer who is trying to make a website for the wonderful and mysterious Mr. Whiskers!<br>
+                Mr. Whiskers is a loving and playful cat, who often gets misjudged by his grumpy appearance. His favourite food are the cat treats called "Dreamies"
+            </p>
+        </section>
+<!--One note for improvement here would be to use the article element. Article elements are typically used for blog posts or with a chunk of text which can make sense on
+it's own. This is to give semantic meaning to the HTML document-->
+        <section id="posts">
+            <h2>Posts</h2>
+            <h3>Mr. Whiskers first day home!</h3>
+            <p>
+                This is a test paragraph, there is no content, please do not read. This is a test paragraph, there is no content, please do not read. This is a test paragraph, there is no content, please do not read.<br>
+                This is a test paragraph, there is no content, please do not read. This is a test paragraph, there is no content, please do not read. This is a test paragraph, there is no content, please do not read. <br>
+                This is a test paragraph, there is no content, please do not read. This is a test paragraph, there is no content, please do not read. This is a test paragraph, there is no content, please do not read. 
+            </p>
+            <h3>Mr. Whiskers first bath!</h3>
+            <p>
+                This is a test paragraph, there is no content, please do not read. This is a test paragraph, there is no content, please do not read. This is a test paragraph, there is no content, please do not read.<br>
+                This is a test paragraph, there is no content, please do not read. This is a test paragraph, there is no content, please do not read. This is a test paragraph, there is no content, please do not read. <br>
+                This is a test paragraph, there is no content, please do not read. This is a test paragraph, there is no content, please do not read. This is a test paragraph, there is no content, please do not read. 
+            </p>
+            <h3>Mr. Whiskers first birthday!</h3>
+            <p>
+                This is a test paragraph, there is no content, please do not read. This is a test paragraph, there is no content, please do not read. This is a test paragraph, there is no content, please do not read.<br>
+                This is a test paragraph, there is no content, please do not read. This is a test paragraph, there is no content, please do not read. This is a test paragraph, there is no content, please do not read. <br>
+                This is a test paragraph, there is no content, please do not read. This is a test paragraph, there is no content, please do not read. This is a test paragraph, there is no content, please do not read. 
+            </p>
+        </section>
+    </main>
+    <!--Another improvement would be creating a section element for the overall contact infomation section, and then using the address element just for the
+    phone number and email address. This is because the <h2> heading is not part of the address and therefore should not be part of the address element. However,
+    in my code, it is. Which is wrong.-->
+    <footer>
+        <address id="contact">
+            <h2>Contact</h2>
+            <p>
+                Phone Number:
+                <a href="tel:+447859910415">+44 7859 910415</a><br>
+                <br>
+                Email Address:
+                <a href="mailto:thomas.jude.ashton@gmail.com">Thomas.Jude.Ashton@gmail.com</a>
+            </p>
+        </address>
+    </footer>
+
+</body>
+</html>
