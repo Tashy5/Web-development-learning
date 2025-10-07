@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <Title>Forms Practice</Title>
+</head>
+
+<!--
+<body>
+    <form action="">
+        <label>
+            Full Name:
+        </label>
+            <input type="text" name="fullname" placeholder="Enter Full Name here"/>
+        <label for="email">
+            Email Address:
+        </label>
+            <input type ="email" id="email" name="email" placeholder="Enter Email Address here"/>
+    </form>
+</body>
+</html>
+Here I was trying to practice using forms, but I was having trouble getting the labels to work properly.
+I will need to do more research on this. I was confused about why the label type for email had to be
+the same for the id and what the point of having an id was.
+-->
+<!--The next section will be able the different type of buttons and when to use them-->
+<body>
+<button>Start Game</button>
+<!--I was able to get the button to work, but I am not sure how to make it do something when clicked.-->
+<button type="button">Show Alert</button>
+<!--This kind of button with the type attribute controls the behaviour of the button-->
+<form action="">
+    <label for="email">Email address:</label>
+    <input required type="email" id="email" name="email" placeholder="Enter Email Address here"/>
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+</body>
+</html>
+<!--One thing I needed to wrap my head around was the difference between the id and name attribute 
+when creating forms. The id attribute is used to link the input to the label. Whereas the name 
+attribute specifies the key for form data when submitting to a server. For perspective, using both
+the id and name attributes for one form labelled "email" will 1. link the input to the label and
+2. make sure that the data that gets sent to the server will be "email:example@email.com", giving it
+a title which makes it more readable.-->
