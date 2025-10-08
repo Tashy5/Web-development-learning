@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Survey Form</title>
+    </head>
+    <body>
+        <header>
+            <h1 id="title">Survey Form</h1>
+            <p id="description">This is a test to create a survey</p>
+        </header>
+        <main>
+            <form id="survey-form">
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <label id="name-label" for="name">Name</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <label id="email-label" for="email">Email</label>
+                <input type="number" id="number" min="1" max="100" placeholder="Enter a number" required>
+                <label id="number-label" for="number">Number</label>
+                <br>
+                <select id="dropdown" name="dropdown" required>
+                    <option disabled selected value>Select an option</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                </select>
+                <label id="dropdown-label" for="dropdown">Dropdown</label>
+                <br>
+                <input type="radio" id="radio1" name="radio-group" value="radio1">
+                <label for="radio1">Radio 1</label>
+                <input type="radio" id="radio2" name="radio-group" value="radio2">
+                <label for="radio2">Radio 2</label>
+                <br>
+                <input type="checkbox" id="checkbox1" name="checkbox-group" value="checkbox1">
+                <label for="checkbox1">Checkbox 1</label>
+                <input type="checkbox" id="checkbox2" name="checkbox-group" value="checkbox2">
+                <label for="checkbox2">Checkbox 2</label>
+                <br>
+                <textarea id="comments" name="comments" placeholder="Enter your comments here"></textarea>
+                <button id="submit" type="submit">Submit</button>
+            </form>
+        </main>
+    </body>
+</html>
+
+<!--One note here is to use the label element before the input element
+Otherwise it would be displayed like this
+--------------- Email: 
+instead of 
+Email: ---------------
+-->
