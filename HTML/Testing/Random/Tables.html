@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>Random Table Practice</title>
+</head>
+<main>
+    <table>
+        <caption>Table One</caption>
+        <thead>
+        <tr>
+            <th>Test 1</th>
+            <th>Test 2</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Data for Test 1</td>
+            <td>Data for Test 2</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <table>
+  <caption>Our Pets</caption>
+  <thead>
+    <tr>
+      <!-- Column Headers -->
+      <th>Name</th>
+      <th>Age</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Nora</th> <!-- Row Header -->
+      <td>5</td>
+      <td>Dog</td>
+    </tr>
+    <tr>
+      <th>Gino</th> <!-- Row Header -->
+      <td>2</td>
+      <td>Cat</td>
+    </tr>
+  </tbody>
+</table>
+<!--One thing I learnt here was when to use <th> in the data rows. For example, the second table I have
+    here has the name of each person as a <th> (header). This makes the name bold which can make the 
+        data more readable.-->
+<table>
+    <caption>Games owned</caption>
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Games Owned</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Jake</th>
+            <td>20</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <th scope="row">Mia</th>
+            <td>22</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <th scope="row">Liam</th>
+            <td>19</td>
+            <td>3</td>
+        </tr>
+    </tbody>
+</table>
+<!--This next table was an experimentation with accessibility. Using the scope attribute to help screen
+readers identify what is a row vs a column.-->
+<table>
+    <caption>Owned Dogs vs Owned Cats</caption>
+    <thead>
+        <tr>
+            <th></th>
+            <th scope="col">Name</th>
+            <th scope="col">Owned</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row" rowspan="2">Dogs</th>
+            <td scope="row">Nora</td>
+            <td scope="row">3</td>
+        </tr>
+        <tr>
+            <td scope="row">Max</td>
+            <td scope="row">1</td>
+        </tr>
+        <tr>
+            <th scope="row" rowspan="2">Cats</th>
+            <td scope="row">Gino</td>
+            <td scope="row">2</td>
+        </tr>
+        <tr>
+            <td scope="row">Luna</td>
+            <td scope="row">4</td>
+        </tr>
+    </tbody>
+</table>
+<!--I wanted to experiment and see if I could use rowspan to create tables where names are nested in
+the element they are measuring, in this case "dogs" and "cats".-->
+</main>
+
+</html>
