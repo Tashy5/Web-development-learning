@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Checkout Page</title>
+</head>
+
+<body>
+    <main>
+        <h1>Checkout</h1>
+        <section>
+            <h2>Your Cart</h2>
+            <img src="https://cdn.freecodecamp.org/curriculum/labs/cube.jpg" alt="Scrambled cube">
+        </section>
+        <section>
+            <h2>Payment Information</h2>
+            <form>
+                <label for ="card-name"><span aria-hidden="true">*</span>Card:</label>
+                <input type="text" id="card-name" name="card-name" required>
+                <label for="card-number"><span aria-hidden="true">*</span>Card Number:</label>
+                <input type="text" id="card-number" name="card-number" aria-describedby="card-number-help" required>
+                <p id="card-number-help">Please include your card number with no spaces</p>
+            </form>
+        </section>
+    </main>
+</body>
+<!--For this payment screen, I learnt about the <span> and aria-hidden elements and attributes.
+    The <span> element is used to add text into the label element, it has no semantic meaning. But
+    it does make CSS styling easier by allowing whatever is inside <span> to be styled differently.
+    The aria-hidden attribute is accessability rich internet applications. It means that people with
+    screen readers won't hear whatever is inside <span>. The screen reader would have already told
+    the user that the input is required from the required attribute. So using the <aria-hidden> avoids
+    confusion.-->
+</html>
