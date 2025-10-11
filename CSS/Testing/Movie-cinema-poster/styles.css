@@ -75,6 +75,7 @@ img {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 20px;
     overflow: auto;
+    border-radius: 10px;
 }
 footer {
     padding: 10px;
