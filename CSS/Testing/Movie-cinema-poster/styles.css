@@ -6,6 +6,7 @@ body {
     background-position: center;
     margin: 0;
     padding: 0;
+
 }
 .title {
     position:sticky;
@@ -78,4 +79,20 @@ img {
 footer {
     padding: 10px;
     margin-left: 20px;
+}
+a {
+    color: rgb(255, 0, 0);
+    text-decoration:underline;
+}
+a:visited {
+    color: rgb(78, 67, 0);
+    text-decoration:underline;
+}
+a:hover {
+    color: rgb(255, 255, 255);
+    text-decoration:none;
+}
+a:active {
+    color: rgb(160, 0, 112);
+    text-decoration:none;
 }
