@@ -1,5 +1,46 @@
 body {
-    display:block;
-    height: 800px;
-    width: 400px;
+    background-color: beige;
+}
+.container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: rgb(248, 211, 156);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+a {
+    text-decoration: none;
+    color: purple;
+}
+a:visited {
+    color: red;
+}
+a:hover {
+    color: orange;
+}
+a:focus {
+    color: green;
+    outline: 1px green;
+    outline-offset: 2px;
+}
+a:active {
+    color: magenta;
+}
+h1, ul, li {
+    margin:15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+li {
+    background-color: aliceblue;
+    padding: 8px;
+    border-radius: 5px;
+}
+.list-item {
+    list-style: none;
 }
