@@ -1,0 +1,33 @@
+body {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left:auto;
+    margin-right:auto;
+    width: 100vw;
+    min-height: calc(100vh - 100px);
+}
+hr {
+    width:80%;
+}
+main {
+    text-align: center;
+}
+section {
+    display:inline-block;
+    vertical-align: top;   /* aligns the tops, not the text baselines */
+    width: 200px;          /* gives them a fixed width (important!) */
+    margin: 20px;        /* space between each section */
+    text-align: left;
+}
+header {
+    width:30%;
+    margin: auto;
+    text-align: center;
+}
+footer {
+    width:30%;
+    margin:auto;
+    text-align: center;
+}
