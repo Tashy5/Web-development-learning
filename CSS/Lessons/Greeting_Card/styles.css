@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 40px;
+    text-align: center;
+    background-color:rgb(78, 103, 104);
+}
+.card {
+    background-color: rgb(200, 190, 255);
+    max-width:400px;
+    padding:40px;
+    margin-top:0;
+    margin-bottom:0;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgb(37, 37, 37);
+    transition: transform 0.3s, background-color 0.3s ease;
+}
+.card:hover {
+    background-color: rgb(206, 255, 230);
+    transform: scale(1.1);
+}
+h1:before {
+    content: "🥳 "
+}
+h1:after {
+    content:" 🥳"
+}
+.message {
+    font-size: 1.2em;
+    color:rgb(104, 104, 104);
+    margin-bottom:20px;
+}
+.card-links {
+    margin-top:20px;
+    display:flex;
+    justify-content: space-around;
+}
+.card-links a {
+    text-decoration: none;
+    font-size: 1em;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(57, 57, 121);
+    transition: background-color 0.3s ease;
+}
+.card-links a:hover {
+    background-color:rgb(139, 20, 155);
+}
+.card-links a:active {
+    background-color:midnightblue;
+}
+.card-links a:focus {
+    outline: 2px solid rgb(0, 255, 213);
+}
+.card-links a:visited {
+    color:crimson;
+}
+section {
+    display:none;
+    margin: 20px auto;
+    max-width: 600px;
+    background-color:whitesmoke;
+    padding: 20px;
+    border-radius: 10px;
+}
+section:hover {
+    transform:skewX(10deg);
+}
+section:target {
+    display:block;
+}
