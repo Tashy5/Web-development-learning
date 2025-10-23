@@ -1,0 +1,40 @@
+body {
+    background-color: rgb(218, 189, 255);
+    font-family: arial, sans-serif;
+    padding: 20px;
+}
+
+input:focus,
+textarea:focus {
+    border-color:blue;
+}
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+}
+input, textarea, select{
+    display:block;
+    width:100%;
+    padding:10px;
+    margin-bottom: 15px;
+    border: 1px solid rgb(117, 117, 117);
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+.radio-group {
+    display: inline-block;
+    flex-wrap: wrap; /* optional, keeps layout responsive */
+    align-items: center;
+}
+
+.radio-item {
+    display:flex;
+    align-items: center;
+    gap:5px;
+}
+/*I need to research flex, and how to put different elements on the same line because the fieldset availability
+box is not having the radio button on the same line as the text */
