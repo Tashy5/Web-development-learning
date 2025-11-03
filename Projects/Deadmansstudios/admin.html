@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <Title>Administration Upload</Title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 2rem auto; }
+        .preview {
+            margin-top: 1.5rem;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .preview img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+        }
+        .caption { font-weight: bold; margin-top: 0.5rem; }
+        .price { color: gray; }
+        .uploadform {
+            display: block;
+            background-color: #e0e0e0;
+            padding: 25px;
+        }
+        label {
+            display: block;
+            margin: 1%;
+        }
+  </style>
+</head>
+
+<body>
+    <h1>Administration Upload</h1>
+    <p>You can upload images, captions and prices here. Additionally, you can edit/delete existing uploads.</p>
+
+    <form class="uploadform" id="upload-form">
+        <label for="image">Choose Image:</label>
+        <input type="file" id="image" name="image" required>
+
+        <label for="caption">Caption:</label>
+        <input type="text" id="caption" name="caption">
+
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price">
+
+        <button type="submit">Upload</button>
+    </form>
+
+    <div class="preview" id="preview-box">
+        <p><em>Preview will appear here</em></p>
+    </div> 
+
+    <button>Edit Existing Files</button>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
