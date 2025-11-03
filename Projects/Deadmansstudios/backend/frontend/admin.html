@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <Title>Administration Upload</Title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 2rem auto; }
+        .preview {
+            margin-top: 1.5rem;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .preview img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+        }
+        .caption { font-weight: bold; margin-top: 0.5rem; }
+        .price { color: gray; }
+        .uploadform {
+            display: block;
+            background-color: #e0e0e0;
+            padding: 25px;
+        }
+        label {
+            display: block;
+            margin: 1%;
+        }
+  </style>
+</head>
+
+<body>
+    <h1>Administration Upload</h1>
+    <p>You can upload images, captions and prices here. Additionally, you can edit/delete existing uploads.</p>
+
+    <form class="uploadform" id="admin-form" enctype="multipart/form-data">
+        <label for="image">Choose Image:</label>
+        <input type="file" id="image-file" name="image" required>
+
+        <label for="caption">Caption:</label>
+        <input type="text" id="caption" name="caption">
+
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price">
+
+        <button type="submit">Upload</button>
+    </form>
+
+    <div class="preview" id="preview-box">
+        <p><em>Preview will appear here</em></p>
+    </div> 
+
+    <button onclick="window.location.href='admin-edit.html'">Edit Existing Files</button>
+    <script src="scripts/script.js"></script>
+    <script>
+        const imageInput = document.getElementById('image-file');
+const captionInput = document.getElementById('caption');
+const priceInput = document.getElementById('price');
+const previewBox = document.getElementById('preview-box');
+const form = document.getElementById('admin-form');
+
+function updatePreview() {
+  const file = imageInput.files[0];
+  const caption = captionInput.value;
+  const price = priceInput.value;
+
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    previewBox.innerHTML = `
+      <img src="${e.target.result}" alt="${caption}">
+      <div class="caption">${caption}</div>
+      <div class="price">£${price}</div>
+    `;
+  };
+  reader.readAsDataURL(file);
+}
+
+imageInput.addEventListener('change', updatePreview);
+captionInput.addEventListener('input', updatePreview);
+priceInput.addEventListener('input', updatePreview);
+
+// ---- New: handle form submission ----
+form.addEventListener('submit', async (e) => {
+  e.preventDefault(); // prevent page reload
+
+  const file = imageInput.files[0];
+  if (!file) {
+    alert('Please select an image to upload');
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append('image', file);
+  formData.append('caption', captionInput.value);
+  formData.append('price', priceInput.value);
+
+  try {
+    const response = await fetch('http://localhost:5000/api/images', {
+      method: 'POST',
+      body: formData
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      previewBox.innerHTML = `
+        <p>Upload successful!</p>
+        <img src="http://localhost:5000/uploads/${result.filename}" alt="${result.caption}">
+        <div class="caption">${result.caption}</div>
+        <div class="price">£${result.price}</div>
+      `;
+      form.reset();
+    } else {
+      alert('Upload failed: ' + result.error);
+    }
+  } catch (err) {
+    alert('Error uploading image: ' + err.message);
+  }
+});
+    </script>
+</body>
+</html>
