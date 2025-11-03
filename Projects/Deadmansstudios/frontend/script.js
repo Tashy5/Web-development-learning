@@ -1,4 +1,4 @@
- const imageInput = document.getElementById('image');
+ const imageInput = document.getElementById('image-file');
     const captionInput = document.getElementById('caption');
     const priceInput = document.getElementById('price');
     const previewBox = document.getElementById('preview-box');

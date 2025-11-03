@@ -37,9 +37,9 @@
     <h1>Administration Upload</h1>
     <p>You can upload images, captions and prices here. Additionally, you can edit/delete existing uploads.</p>
 
-    <form class="uploadform" id="upload-form">
+    <form class="uploadform" id="admin-form" enctype="multipart/form-data">
         <label for="image">Choose Image:</label>
-        <input type="file" id="image" name="image" required>
+        <input type="file" id="image-file" name="image" required>
 
         <label for="caption">Caption:</label>
         <input type="text" id="caption" name="caption">
@@ -55,6 +55,7 @@
     </div> 
 
     <button>Edit Existing Files</button>
+    <script src="admin.js"></script>
 
     <script src="script.js"></script>
 
