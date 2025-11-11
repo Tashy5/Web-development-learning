@@ -1,3 +1,4 @@
+console.log('SERVER BOOTED: ', new Date());
 const db = require('./database'); // points to database.js
 const express = require('express');
 const cors = require('cors');
@@ -47,6 +48,9 @@ const upload = multer({ storage });
 
 // Upload endpoint
 app.post('/api/images', upload.single('image'), (req, res) => {
+  console.log('Upload route hit!');
+  console.log('File:', req.file);
+  console.log('Body:', req.body);
   const { caption, price } = req.body;
   const filename = req.file.filename;
 
@@ -86,6 +90,15 @@ app.delete('/api/images/:id', (req, res) => {
       });
     });
   });
+});
+
+app.post('/api/admin-login', (req, res) => {
+  const { key } = req.body;
+  if (key === process.env.ADMIN_KEY) {
+    res.json({ success: true });
+  } else {
+    res.status(401).json({ success: false, message: 'Invalid admin key' });
+  }
 });
 
 // Start the server

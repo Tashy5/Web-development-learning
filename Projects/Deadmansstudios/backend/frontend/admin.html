@@ -56,73 +56,75 @@
 
     <button onclick="window.location.href='admin-edit.html'">Edit Existing Files</button>
     <script src="scripts/script.js"></script>
-    <script>
-        const imageInput = document.getElementById('image-file');
-const captionInput = document.getElementById('caption');
-const priceInput = document.getElementById('price');
-const previewBox = document.getElementById('preview-box');
-const form = document.getElementById('admin-form');
 
-function updatePreview() {
-  const file = imageInput.files[0];
-  const caption = captionInput.value;
-  const price = priceInput.value;
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const imageInput = document.getElementById('image-file');
+  const captionInput = document.getElementById('caption');
+  const priceInput = document.getElementById('price');
+  const previewBox = document.getElementById('preview-box');
+  const form = document.getElementById('admin-form');
 
-  if (!file) return;
+  function updatePreview() {
+    const file = imageInput.files[0];
+    const caption = captionInput.value;
+    const price = priceInput.value;
 
-  const reader = new FileReader();
-  reader.onload = function(e) {
-    previewBox.innerHTML = `
-      <img src="${e.target.result}" alt="${caption}">
-      <div class="caption">${caption}</div>
-      <div class="price">£${price}</div>
-    `;
-  };
-  reader.readAsDataURL(file);
-}
+    if (!file) return;
 
-imageInput.addEventListener('change', updatePreview);
-captionInput.addEventListener('input', updatePreview);
-priceInput.addEventListener('input', updatePreview);
-
-// ---- New: handle form submission ----
-form.addEventListener('submit', async (e) => {
-  e.preventDefault(); // prevent page reload
-
-  const file = imageInput.files[0];
-  if (!file) {
-    alert('Please select an image to upload');
-    return;
-  }
-
-  const formData = new FormData();
-  formData.append('image', file);
-  formData.append('caption', captionInput.value);
-  formData.append('price', priceInput.value);
-
-  try {
-    const response = await fetch('http://localhost:5000/api/images', {
-      method: 'POST',
-      body: formData
-    });
-
-    const result = await response.json();
-
-    if (response.ok) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
       previewBox.innerHTML = `
-        <p>Upload successful!</p>
-        <img src="http://localhost:5000/uploads/${result.filename}" alt="${result.caption}">
-        <div class="caption">${result.caption}</div>
-        <div class="price">£${result.price}</div>
+        <img src="${e.target.result}" alt="${caption}">
+        <div class="caption">${caption}</div>
+        <div class="price">£${price}</div>
       `;
-      form.reset();
-    } else {
-      alert('Upload failed: ' + result.error);
-    }
-  } catch (err) {
-    alert('Error uploading image: ' + err.message);
+    };
+    reader.readAsDataURL(file);
   }
+
+  imageInput.addEventListener('change', updatePreview);
+  captionInput.addEventListener('input', updatePreview);
+  priceInput.addEventListener('input', updatePreview);
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault(); // prevent page reload
+
+    const file = imageInput.files[0];
+    if (!file) {
+      alert('Please select an image to upload');
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('image', file);
+    formData.append('caption', captionInput.value);
+    formData.append('price', priceInput.value);
+
+    try {
+      const response = await fetch('/api/images', {
+        method: 'POST',
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        previewBox.innerHTML = `
+          <p>Upload successful!</p>
+          <img src="/uploads/${result.filename}" alt="${result.caption}">
+          <div class="caption">${result.caption}</div>
+          <div class="price">£${result.price}</div>
+        `;
+        form.reset();
+      } else {
+        alert('Upload failed: ' + result.error);
+      }
+    } catch (err) {
+      alert('Error uploading image: ' + err.message);
+    }
+  });
 });
-    </script>
+</script>
 </body>
 </html>
